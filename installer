@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="wezterm,zsh,starship,tmux"
+fi
+
+for folder in ${(s:,:)STOW_FOLDERS}
+do
+    echo "stowing in $XDG_CONFIG_HOME/$folder"
+    #stow -D --target "$XDG_CONFIG_HOME" "$folder"
+    #stow --target "$XDG_CONFIG_HOME" "$folder"
+    #stow -D "$folder"
+    stow "$folder"
+done
