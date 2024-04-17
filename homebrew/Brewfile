@@ -1,0 +1,4 @@
+tap "homebrew/bundle"
+brew "bat"
+brew "starship"
+brew "stow"
