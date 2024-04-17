@@ -6,9 +6,15 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
--- only for WSL
+-- mainly for Windows taskbar
+local screen_height_offset = 0
+
+-- OS-specific config
 if wezterm.target_triple:find("windows") ~= nil then
     config.default_domain = 'WSL:Ubuntu'
+    screen_height_offset = 50
+elseif wezterm.target_triple:find("darwin") ~= nil then
+    --config.macos_window_background_blur = 30
 end
 
 -- Theme & Fonts
@@ -19,12 +25,11 @@ config.font_size = 11.0
 
 -- Window
 config.enable_tab_bar = false
-config.initial_rows = 67
+config.initial_rows = 68
 config.initial_cols = 275
 config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 0.99
---config.macos_window_background_blur = 30
 
 config.window_padding = {
     left = '1cell',
@@ -50,7 +55,7 @@ wezterm.on('gui-attached', function(domain)
         local window_height = gui_window:get_dimensions().pixel_height
         local window_width = gui_window:get_dimensions().pixel_width
 
-        local screen_height = wezterm.gui.screens().active.height
+        local screen_height = wezterm.gui.screens().active.height - screen_height_offset
         local screen_width = wezterm.gui.screens().active.width
 
         local center_y = (screen_height - window_height) / 2
