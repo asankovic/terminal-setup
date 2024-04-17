@@ -3,3 +3,5 @@ export STARSHIP_CONFIG=~/starship.toml
 
 # Aliases
 alias cat=bat
+
+eval "$(zoxide init zsh)"
