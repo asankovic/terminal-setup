@@ -1,2 +1,5 @@
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/starship.toml
+
+# Aliases
+alias cat=bat
