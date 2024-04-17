@@ -1,3 +1,6 @@
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/starship.toml
 
@@ -18,5 +21,13 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 alias cl='clear'
+
+# Autosuggestion
+bindkey '^e' autosuggest-execute
+bindkey '^a' autosuggest-accept
+bindkey '^t' autosuggest-toggle
+bindkey '^l' vi-forward-word
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
 
 eval "$(zoxide init zsh)"
