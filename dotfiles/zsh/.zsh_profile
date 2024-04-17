@@ -1,7 +1,13 @@
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/starship.toml
 
-# Aliases
+export LANG=en_US.UTF-8
+
+# CLI
 alias cat=bat
+alias ls="eza -a"
+alias lt="eza -T"
+alias la="eza -la"
+alias ld="eza -Da"
 
 eval "$(zoxide init zsh)"
