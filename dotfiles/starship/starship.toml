@@ -11,6 +11,7 @@ command_timeout = 1000
 
 [character]
 error_symbol = '[✖](bold red) '
+vimcmd_symbol = '[V](bold green)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

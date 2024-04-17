@@ -4,7 +4,7 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/starship.toml
 
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 # CLI
 alias cat=bat
@@ -29,5 +29,8 @@ bindkey '^t' autosuggest-toggle
 bindkey '^l' vi-forward-word
 bindkey '^k' up-line-or-search
 bindkey '^j' down-line-or-search
+
+# Switching vim modes in terminal
+bindkey jk vi-cmd-mode
 
 eval "$(zoxide init zsh)"
