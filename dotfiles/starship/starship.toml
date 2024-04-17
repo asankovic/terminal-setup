@@ -2,23 +2,15 @@
 
 add_newline = false
 format = """
-[┌── ](bold green)$directory
-[└─](bold green)$character
+$directory
+$character
 """
 palette = "catppuccin_mocha"
 right_format = """$all"""
 command_timeout = 1000
 
 [character]
-#success_symbol = '[❯](bold green) '
-#error_symbol = '[✗](bold red) '
-#vimcmd_symbol = '[V](bold green) '
-success_symbol = "[❯](bold green)"
-error_symbol = "[✖](bold red)"
-vimcmd_symbol = "[](bold creen)"
-vimcmd_replace_one_symbol = "[](bold purple)"
-vimcmd_replace_symbol = "[](bold purple)"
-vimcmd_visual_symbol = "[](bold lavender)"
+error_symbol = '[✖](bold red) '
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
