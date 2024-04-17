@@ -6,8 +6,17 @@ export LANG=en_US.UTF-8
 # CLI
 alias cat=bat
 alias ls="eza -a"
-alias lt="eza -T"
-alias la="eza -la"
-alias ld="eza -Da"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias la="eza -la --icons --git"
+alias ld="eza --tree --only-dirs --icons --level=2 --git -a"
+
+# Directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+alias cl='clear'
 
 eval "$(zoxide init zsh)"
