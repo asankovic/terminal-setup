@@ -1,7 +1,11 @@
 bat
 eza
+fd
+fzf
+python@3.12
 starship
 stow
+tldr
 tree
 zoxide
 zsh-autosuggestions
