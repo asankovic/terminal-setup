@@ -1,11 +1,13 @@
 bat
+curl
 eza
 fd
 fzf
+libzip
 python@3.12
 starship
 stow
-tldr
+tlrc
 tree
 zoxide
 zsh-autosuggestions
