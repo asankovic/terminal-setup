@@ -1,18 +1,32 @@
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/starship.toml
-
 #export LANG=en_US.UTF-8
 
 # CLI
 alias cat=bat
 alias cd="z"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias lt="eza --tree --level=2 --long --icons --git --no-filesize --no-time --no-user --no-permissions"
+alias lt="eza --tree --level=3 --long --icons --git --no-filesize --no-time --no-user --no-permissions -a"
 alias la="eza -la --icons --git"
 alias ld="eza --tree --only-dirs --icons --level=2 --git -a"
+
+# Git
+alias ga="git add"
+alias gaa="git add -A"
+alias gap="git add -p"
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gpu="git push"
+alias gs="git status"
+alias gd="git diff"
+alias gco="git checkout"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gr='git remote'
+alias grs='git restore --staged'
+alias gsh='git stash'
+alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(black)(%ch) %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 # Directories
 alias ..="cd .."
@@ -34,11 +48,14 @@ bindkey '^j' down-line-or-search
 # Switching vim modes in terminal
 bindkey jk vi-cmd-mode
 
+
+eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+export BAT_THEME="Catppuccin Mocha"
+export STARSHIP_CONFIG=~/starship.toml
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export BAT_THEME="Catppuccin Mocha"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
