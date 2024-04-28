@@ -12,6 +12,7 @@ return {
       end,
     },
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    "folke/todo-comments.nvim",
   },
 
   config = function()
@@ -53,6 +54,7 @@ return {
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>se', builtin.oldfiles, { desc = '[S]earch R[e]cent Files' })
     vim.keymap.set('n', '<leader>sg', builtin.git_status, { desc = '[S]earch [G]it changed files' })
+    vim.keymap.set('n', '<leader>st', "<cmd>TodoTelescope<CR>", { desc = 'Search TODO comments' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
   end,
