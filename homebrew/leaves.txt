@@ -8,7 +8,9 @@ gawk
 gnu-sed
 jq
 libzip
-python@3.12
+neovim
+node
+ranger
 ripgrep
 rm-improved
 sd
