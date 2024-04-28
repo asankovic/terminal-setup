@@ -30,4 +30,8 @@ keymap.set("n", "n", "nzzzv", {desc = "Keep the selection in the middle of the s
 keymap.set("n", "N", "Nzzzv", {desc = "Keep the selection in the middle of the screen."})
 
 keymap.set("n", "Q", "<nop>", {desc = "Nope."})
+keymap.set("n", "QQ", "<cmd>q!<CR>", {desc = "Force quit."})
+keymap.set("n", "WW", "<cmd>w!<CR>", {desc = "Force save."})
+keymap.set("n", "<C-W>,", ":vertical resize -10<CR>", {desc = "Expand size of vertical split."})
+keymap.set("n", "<C-W>.", ":vertical resize +10<CR>", {desc = "Reduce size of vertical split."})
 --todo check more keymaps
