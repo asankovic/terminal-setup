@@ -12,6 +12,7 @@ opt.autoindent = true
 -- opt.smartindent = true
 opt.shiftround = true
 
+opt.cursorline = true
 opt.wrap = false
 
 opt.ignorecase = true
@@ -40,4 +41,3 @@ opt.autoread = true
 opt.fileformats = "unix,dos" -- c/p from system on WSL2
 --opt.colorcolumn = "80"
 -- opt.laststatus = 2
--- opt.cursorline = true
