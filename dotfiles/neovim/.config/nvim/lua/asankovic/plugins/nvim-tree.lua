@@ -51,10 +51,10 @@ return {
 
     local keymap = vim.keymap
 
-    keymap.set("n", "<leader>ee", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer (open if closed)" })
+    -- keymap.set("n", "<leader>ee", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer (open if closed)" })
     keymap.set("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "Open file explorer on current file" })
-    keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Recursively collabs file tree" })
+    -- keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "Open file explorer on current file" })
+    -- keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Recursively collabs file tree" })
     keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
   end
 }

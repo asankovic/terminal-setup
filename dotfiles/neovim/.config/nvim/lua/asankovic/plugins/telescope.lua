@@ -11,6 +11,12 @@ return {
         return vim.fn.executable 'make' == 1
       end,
     },
+    { 
+      "nvim-telescope/telescope-live-grep-args.nvim" ,
+      -- This will not install any breaking changes.
+      -- For major updates, this must be adjusted manually.
+      version = "^1.0.0",
+    },
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     "folke/todo-comments.nvim",
   },
@@ -20,14 +26,31 @@ return {
     local actions = require("telescope.actions")
 
     --todo add trouble
-    telescope.setup({
+    telescope.setup {
       defaults = {
-        path_display = { "smart" },
+        layout_strategy = "horizontal",
+        layout_config = {
+          preview_width = 0.65,     
+          horizontal = {
+            size = {
+              width = "95%",
+              height = "95%",
+            },
+          },
+        },
+        pickers = {
+          find_files = {
+            theme = "dropdown",
+          }
+        },
         mappings = {
           i = {
-          ["<C-k>"] = actions.move_selection_previous,
-          ["<C-j>"] = actions.move_selection_next,
-          --["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-j>"] = actions.cycle_history_next,
+            ["<C-k>"] = actions.cycle_history_prev,
+            ["<C-q>"] = actions.delete_buffer,
+            ["<C-s>"] = actions.cycle_previewers_next,
+            ["<C-a>"] = actions.cycle_previewers_prev,
+            ["<esc>"] = actions.close,
           },
         },
       },
@@ -36,26 +59,29 @@ return {
           require('telescope.themes').get_dropdown(),
         },
       },
-
-    })
+    }
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'noice')
+    pcall(require('telescope').load_extension, 'live_grep_args')
 
     local builtin = require 'telescope.builtin'
-    vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-    vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find in Help' })
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Find in Keymaps' })
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find in Files' })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find in Buffers' })
+    vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Find in Symbols' })
     --vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-    vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-    vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch by Grep' })
-    vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    vim.keymap.set('n', '<leader>se', builtin.oldfiles, { desc = '[S]earch R[e]cent Files' })
-    vim.keymap.set('n', '<leader>sg', builtin.git_status, { desc = '[S]earch [G]it changed files' })
-    vim.keymap.set('n', '<leader>st', "<cmd>TodoTelescope<CR>", { desc = 'Search TODO comments' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
+    vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Find Word under cursor' })
+    vim.keymap.set('n', '<leader>fa', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = 'Find by Grep' })
+    vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Find in Diagnositcs' })
+    vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Find Resume search' })
+    vim.keymap.set('n', '<leader>fe', builtin.oldfiles, { desc = 'Find in Recent files' })
+    vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Find in Git affected files' })
+    vim.keymap.set('n', '<leader>fc', builtin.git_bcommits, { desc = 'Find in Git commits for current Buffer' })
+    vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<CR>", { desc = 'Find in TODO comments' })
+    -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
   end,
 }

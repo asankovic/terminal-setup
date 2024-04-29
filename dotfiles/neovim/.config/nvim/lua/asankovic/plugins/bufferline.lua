@@ -8,8 +8,10 @@ return {
       highlights = require("catppuccin.groups.integrations.bufferline").get(),
       options = {
         mode = "tabs",
-        separator_style = "slant",
+        -- separator_style = "slant",
       },
     }
+    -- disabling it for now
+    vim.opt.showtabline = 0
   end,
 }

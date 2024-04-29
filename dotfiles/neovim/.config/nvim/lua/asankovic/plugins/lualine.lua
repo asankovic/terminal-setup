@@ -11,6 +11,7 @@ return {
         section_separators = "",
       },
       sections = {
+        lualine_a = { "buffers" },
         lualine_c = {
           {
             'filename',
@@ -18,6 +19,11 @@ return {
           }
         },
         lualine_x = {
+          {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#fab387" },
+          },
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
@@ -27,7 +33,8 @@ return {
           { "fileformat" },
           { "filetype" },
         },
-      }
+      },
+      extensions = { "fugitive", "quickfix", "fzf", "lazy", "mason", "nvim-dap-ui", "oil", "trouble" },
     }
   end
 }

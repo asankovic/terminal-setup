@@ -7,7 +7,8 @@ return {
     config = function()
       require("catppuccin").setup {
         integrations = {
-          notify = true
+          notify = true,
+          noice = true,
         }
       }
       vim.cmd.colorscheme "catppuccin-mocha"
