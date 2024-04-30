@@ -24,13 +24,23 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local telescopeConfig = require("telescope.config")
+
+    -- Clone the default Telescope configuration
+    local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+    -- I want to search in hidden/dot files.
+    table.insert(vimgrep_arguments, "--hidden")
+    -- I don't want to search in the `.git` directory.
+    table.insert(vimgrep_arguments, "--glob")
+    table.insert(vimgrep_arguments, "!**/.git/*")
 
     --todo add trouble
     telescope.setup {
       defaults = {
+        vimgrep_arguments = vimgrep_arguments,
         layout_strategy = "horizontal",
         layout_config = {
-          preview_width = 0.65,     
+          preview_width = 0.65,
           horizontal = {
             size = {
               width = "95%",
@@ -38,21 +48,19 @@ return {
             },
           },
         },
-        pickers = {
-          find_files = {
-            theme = "dropdown",
-          }
-        },
         mappings = {
           i = {
             ["<C-j>"] = actions.cycle_history_next,
             ["<C-k>"] = actions.cycle_history_prev,
             ["<C-q>"] = actions.delete_buffer,
-            ["<C-s>"] = actions.cycle_previewers_next,
-            ["<C-a>"] = actions.cycle_previewers_prev,
             ["<esc>"] = actions.close,
           },
         },
+      },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        }
       },
       extensions = {
         ['ui-select'] = {
@@ -73,7 +81,7 @@ return {
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find in Files' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find in Buffers' })
     vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Find in Symbols' })
-    --vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+    vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find in Marks' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Find Word under cursor' })
     vim.keymap.set('n', '<leader>fa', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = 'Find by Grep' })
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Find in Diagnositcs' })
@@ -82,6 +90,5 @@ return {
     vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Find in Git affected files' })
     vim.keymap.set('n', '<leader>fc', builtin.git_bcommits, { desc = 'Find in Git commits for current Buffer' })
     vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<CR>", { desc = 'Find in TODO comments' })
-    -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
   end,
 }

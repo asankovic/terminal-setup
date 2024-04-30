@@ -38,7 +38,6 @@ keymap.set("n", "WQ", "<cmd>wqa<CR>", {desc = "Save all and exit nvim."})
 keymap.set("n", "<C-]>", ":vertical resize -10<CR>", {desc = "Reduce size of vertical split."})
 keymap.set("n", "<C-[>", ":vertical resize +10<CR>", {desc = "Expand size of vertical split."})
 
-keymap.set('n', '<space>h', "<cmd>set nohlsearch<CR>", {desc = "Turn off search result highlighting"})
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file executable" })
 keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")

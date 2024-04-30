@@ -17,7 +17,7 @@ opt.wrap = false
 
 opt.ignorecase = true
 opt.smartcase = true
---opt.hlsearch = false
+opt.hlsearch = false
 opt.incsearch = true
 
 opt.background = "dark"
