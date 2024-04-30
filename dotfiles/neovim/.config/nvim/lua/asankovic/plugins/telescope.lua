@@ -88,8 +88,8 @@ return {
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Find in Diagnositcs' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Find Resume search' })
     vim.keymap.set('n', '<leader>fe', builtin.oldfiles, { desc = 'Find in Recent files' })
-    vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Find in Git affected files' })
-    vim.keymap.set('n', '<leader>fc', builtin.git_bcommits, { desc = 'Find in Git commits for current Buffer' })
+    vim.keymap.set('n', '<leader>fgg', builtin.git_status, { desc = 'Find in Git affected files' })
+    vim.keymap.set('n', '<leader>fgc', builtin.git_bcommits, { desc = 'Find in Git commits for current Buffer' })
     vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<CR>", { desc = 'Find in TODO comments' })
   end,
 }
