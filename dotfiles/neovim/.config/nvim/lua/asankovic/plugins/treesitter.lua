@@ -62,7 +62,6 @@ return {
             ['il'] = '@loop.inner',
             ['al'] = '@loop.outer',
             ['ac'] = '@comment.outer',
-            ['ic'] = '@comment.inner',
           },
         },
         move = {
