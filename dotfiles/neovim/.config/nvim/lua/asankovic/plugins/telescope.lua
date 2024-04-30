@@ -38,6 +38,7 @@ return {
     telescope.setup {
       defaults = {
         vimgrep_arguments = vimgrep_arguments,
+        path_display = { "truncate" },
         layout_strategy = "horizontal",
         layout_config = {
           preview_width = 0.65,

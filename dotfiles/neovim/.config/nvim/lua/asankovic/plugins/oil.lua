@@ -7,6 +7,6 @@ return {
       default_file_explorer = true,
     })
 
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
   end,
 }

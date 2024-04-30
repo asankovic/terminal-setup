@@ -16,6 +16,7 @@ return {
             { find = '; before #%d+' },
             { find = '%d fewer lines' },
             { find = '%d lines [<=>]ed %d time' },
+            { find = '%d lines %a+ed' },
             { find = '%d more lines' },
           },
         },
