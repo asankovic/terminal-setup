@@ -56,10 +56,10 @@ return {
         end, { 'i', 's' }),
       }),
       sources = cmp.config.sources({
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "nvim_lsp" },
       }),
 
       formatting = {

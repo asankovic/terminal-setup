@@ -1,6 +1,6 @@
 return {
-  {"nvim-lua/plenary.nvim"}, -- lua functions that many plugins use
-  {"christoomey/vim-tmux-navigator"},
+  { "nvim-lua/plenary.nvim" }, -- lua functions that many plugins use
+  { "christoomey/vim-tmux-navigator" },
   {
     'numToStr/Comment.nvim',
     event = { "BufReadPre", "BufNewFile" },
@@ -76,14 +76,14 @@ return {
     },
     config = function()
       local neogit = require("neogit")
-      neogit.setup()
+      neogit.setup({})
 
       vim.keymap.set("n", "<leader>ng", neogit.open,
-        {silent = true, noremap = true}
+        { silent = true, noremap = true }
       )
       -- vim-fugitive
       vim.keymap.set("n", "<leader>gb", ":G blame<CR>",
-        {silent = true, noremap = true}
+        { silent = true, noremap = true }
       )
     end
   },
