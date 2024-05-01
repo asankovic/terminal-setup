@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim",                   opts = {} },
+    { 'j-hui/fidget.nvim',                   opts = {} },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -65,6 +66,30 @@ return {
         -- keymap.set('n', '<space>wl', function()
         --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         -- end, opts)
+        --
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client and client.server_capabilities.documentHighlightProvider then
+          local highlight_augroup = vim.api.nvim_create_augroup('asankovic-lsp-highlight', { clear = false })
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            buffer = ev.buf,
+            group = highlight_augroup,
+            callback = vim.lsp.buf.document_highlight,
+          })
+
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            buffer = ev.buf,
+            group = highlight_augroup,
+            callback = vim.lsp.buf.clear_references,
+          })
+        end
+      end,
+    })
+
+    vim.api.nvim_create_autocmd('LspDetach', {
+      group = vim.api.nvim_create_augroup('asankovic-lsp-detach', { clear = true }),
+      callback = function(event)
+        vim.lsp.buf.clear_references()
+        vim.api.nvim_clear_autocmds { group = 'asankovic-lsp-highlight', buffer = event.buf }
       end,
     })
 

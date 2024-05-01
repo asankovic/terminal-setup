@@ -5,14 +5,14 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
-      "nvim-telescope/telescope-fzf-native.nvim", 
+      "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       cond = function()
         return vim.fn.executable 'make' == 1
       end,
     },
-    { 
-      "nvim-telescope/telescope-live-grep-args.nvim" ,
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
       -- This will not install any breaking changes.
       -- For major updates, this must be adjusted manually.
       version = "^1.0.0",
@@ -84,7 +84,8 @@ return {
     vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Find in Symbols' })
     vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find in Marks' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Find Word under cursor' })
-    vim.keymap.set('n', '<leader>fa', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = 'Find by Grep' })
+    vim.keymap.set('n', '<leader>fa', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+      { desc = 'Find by Grep' })
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Find in Diagnositcs' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Find Resume search' })
     vim.keymap.set('n', '<leader>fe', builtin.oldfiles, { desc = 'Find in Recent files' })
