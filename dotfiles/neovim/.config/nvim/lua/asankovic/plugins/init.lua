@@ -6,9 +6,7 @@ return {
 		"numToStr/Comment.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		lazy = false,
-		config = function()
-			require("Comment").setup()
-		end,
+		opts = {},
 	},
 	{
 		"stevearc/dressing.nvim",
@@ -40,9 +38,7 @@ return {
 		"folke/todo-comments.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("todo-comments").setup()
-		end,
+		opts = {},
 	},
 	{
 		"szw/vim-maximizer",
@@ -55,7 +51,7 @@ return {
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
-			vim.o.timeoutlen = 500
+			vim.o.timeoutlen = 1000
 		end,
 		opts = {},
 	},
@@ -100,4 +96,5 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open lazy git" },
 		},
 	},
+	{ "chentoast/marks.nvim", opts = {} },
 }

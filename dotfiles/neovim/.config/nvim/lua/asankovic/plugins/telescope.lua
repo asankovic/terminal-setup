@@ -42,7 +42,6 @@ return {
 		table.insert(vimgrep_arguments, "--glob")
 		table.insert(vimgrep_arguments, "!**/.git/*")
 
-		--todo add trouble
 		telescope.setup({
 			defaults = {
 				vimgrep_arguments = vimgrep_arguments,
@@ -80,14 +79,13 @@ return {
 			},
 		})
 
-		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 		pcall(require("telescope").load_extension, "noice")
 		pcall(require("telescope").load_extension, "live_grep_args")
 
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find in Help" })
+		vim.keymap.set("n", "<leader>f?", builtin.help_tags, { desc = "Find in Help" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find in Keymaps" })
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find in Files" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find in Buffers" })

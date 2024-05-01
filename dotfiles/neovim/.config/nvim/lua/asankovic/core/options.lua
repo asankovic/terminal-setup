@@ -6,8 +6,8 @@ local opt = vim.opt
 opt.mouse = "a"
 opt.updatetime = 250
 
-opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- opt.list = true
+-- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
 
 opt.relativenumber = true
