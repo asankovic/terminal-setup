@@ -48,8 +48,8 @@ return {
       -- Normal mode
       map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
       map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
-      map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
       map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'git [u]ndo stage hunk' })
+      map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
       map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
       map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
       map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
@@ -57,8 +57,10 @@ return {
         gitsigns.diffthis '@'
       end, { desc = 'git [D]iff against last commit' })
 
-      -- -- Toggles
-      map('n', '<leader>hb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+      map("n", "<leader>hb", function()
+        gitsigns.blame_line({ full = true })
+      end, { desc = "Git Blame line" })
+      map("n", "<leader>hB", gitsigns.toggle_current_line_blame, { desc = "Toggle line blame" })
 
       -- Text object
       -- map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")

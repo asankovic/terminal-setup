@@ -91,5 +91,6 @@ return {
     vim.keymap.set('n', '<leader>fgg', builtin.git_status, { desc = 'Find in Git affected files' })
     vim.keymap.set('n', '<leader>fgc', builtin.git_bcommits, { desc = 'Find in Git commits for current Buffer' })
     vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<CR>", { desc = 'Find in TODO comments' })
+    vim.keymap.set('n', '<leader>fgb', ":Telescope git_branches<CR>", { desc = 'Find in Git branches' })
   end,
 }

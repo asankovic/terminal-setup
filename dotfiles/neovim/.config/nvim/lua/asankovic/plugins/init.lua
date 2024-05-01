@@ -66,5 +66,25 @@ return {
       })
     end,
   },
-  {"tpope/vim-fugitive"},
+  { "tpope/vim-fugitive" },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      local neogit = require("neogit")
+      neogit.setup()
+
+      vim.keymap.set("n", "<leader>ng", neogit.open,
+        {silent = true, noremap = true}
+      )
+      -- vim-fugitive
+      vim.keymap.set("n", "<leader>gb", ":G blame<CR>",
+        {silent = true, noremap = true}
+      )
+    end
+  }
 }
