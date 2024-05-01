@@ -61,7 +61,7 @@ return {
             ['ai'] = '@conditional.outer',
             ['il'] = '@loop.inner',
             ['al'] = '@loop.outer',
-            ['ac'] = '@comment.outer',
+            ['ak'] = '@comment.outer',
           },
         },
         move = {

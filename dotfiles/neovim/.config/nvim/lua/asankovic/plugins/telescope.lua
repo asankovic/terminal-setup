@@ -25,6 +25,14 @@ return {
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local telescopeConfig = require("telescope.config")
+    local transform_mod = require("telescope.actions.mt").transform_mod
+    local trouble = require("trouble")
+    local trouble_telescope = require("trouble.providers.telescope")
+    local custom_actions = transform_mod({
+      open_trouble_qflist = function(prompt_bufnr)
+        trouble.toggle("quickfix")
+      end,
+    })
 
     -- Clone the default Telescope configuration
     local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
@@ -38,7 +46,7 @@ return {
     telescope.setup {
       defaults = {
         vimgrep_arguments = vimgrep_arguments,
-        path_display = { "truncate" },
+        path_display = { "smart" },
         layout_strategy = "horizontal",
         layout_config = {
           preview_width = 0.65,
@@ -53,7 +61,9 @@ return {
           i = {
             ["<C-j>"] = actions.cycle_history_next,
             ["<C-k>"] = actions.cycle_history_prev,
-            ["<C-q>"] = actions.delete_buffer,
+            ["<C-d>"] = actions.delete_buffer,
+            ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
+            ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
             ["<esc>"] = actions.close,
           },
         },
