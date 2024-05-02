@@ -1,10 +1,10 @@
-### Link dotfiles
+### Configure setup
 
 ```bash
 ./installer
 ```
 
-### Unlink dotfiles
+### Remove setup
 
 ```bash
 ./installer rm
