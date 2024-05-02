@@ -50,5 +50,5 @@ opt.termguicolors = true
 opt.autowrite = true
 opt.autoread = true
 opt.fileformats = "unix,dos" -- c/p from system on WSL2
---opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 -- opt.laststatus = 2

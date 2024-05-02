@@ -52,3 +52,5 @@ end, { desc = "Source current file" })
 
 keymap.set("n", "<leader>w", "<cmd>bp|bd #<CR>", { desc = "Close Buffer; Retain Split" })
 keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close Buffer" })
+
+keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Close Buffer" })
