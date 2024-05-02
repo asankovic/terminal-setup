@@ -10,7 +10,7 @@
 ./installer rm
 ```
 
-### Export homebrew
+### Export homebrew manually
 
 ```bash
 # Using leaves
