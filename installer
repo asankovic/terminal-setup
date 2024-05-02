@@ -1,26 +1,36 @@
 #!/usr/bin/env zsh
+# set -x
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
-dotfiles_dir="dotfiles"
 script_dir="$(cd "$(dirname "$0")" && pwd)"
+cd "$script_dir"
 
-cd "$script_dir/$dotfiles_dir"
+stow_ignore="$script_dir/.stow-local-ignore"
+stow_target="$XDG_CONFIG_HOME"
+stow_dir="."
 
-if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="wezterm,zsh,starship,tmux,neovim"
+echo "Unstowing everyting/doing cleanup"
+stow -D --ignore "$stow_ignore" --target "$stow_target" "$stow_dir"
+
+zshrc_path="$HOME/.zshrc"
+zsh_profile_source_line="source $XDG_CONFIG_HOME/zsh/.zsh_profile"
+
+echo "Cleaning up zshrc"
+sed -i "\|^$zsh_profile_source_line\$|d" $zshrc_path
+
+if [[ "$1" != "rm" ]] then
+    echo "Stowing content to $XDG_CONFIG_HOME"
+    stow --ignore "$stow_ignore" --target "$stow_target" "$stow_dir"
+
+    echo "Linking root zshrc to custom profile"
+    if [ ! -f "$zshrc_path" ]; then
+        touch "$zshrc_path"
+    fi
+
+    if ! grep -qF "$zsh_profile_source_line" "$zshrc_path"; then
+        echo "$zsh_profile_source_line" >> "$zshrc_path"
+    fi
 fi
 
-for folder in ${(s:,:)STOW_FOLDERS}
-do
-    #stow -D --target "$XDG_CONFIG_HOME" "$folder"
-    #stow --target "$XDG_CONFIG_HOME" "$folder"
-    if stow -n -D --target "$HOME" "$folder" >/dev/null 2>&1; then
-        echo "Unstowing $folder"
-	stow -D --target "$HOME" "$folder"
-    else
-        echo "$folder is not stowed, nothing to unstow"
-    fi
-    if [[ "$1" != "rm" ]] then
-        echo "Stowing "$folder" content to $HOME"
-        stow --target "$HOME" "$folder"
-    fi
-done
+source "$zshrc_path"
+echo "Zshrc updated and sourced!"

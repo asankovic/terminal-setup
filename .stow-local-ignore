@@ -1,0 +1,8 @@
+installer
+homebrew
+git
+
+\.git
+\.gitignore
+\.gitmodules
+^/README.*
