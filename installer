@@ -18,7 +18,7 @@ zsh_profile_source_line="source $XDG_CONFIG_HOME/zsh/.zsh_profile"
 echo "Cleaning up zshrc"
 sed -i "\|^$zsh_profile_source_line\$|d" $zshrc_path
 
-if [[ "$1" != "rm" ]] then
+if [[ "$1" != "rm" ]]; then
     echo "Stowing content to $XDG_CONFIG_HOME"
     stow --ignore "$stow_ignore" --target "$stow_target" "$stow_dir"
 
@@ -34,3 +34,14 @@ fi
 
 source "$zshrc_path"
 echo "Zshrc updated and sourced!"
+
+if [[ "$1" != "rm" ]]; then
+    if command -v brew &> /dev/null; then
+        echo "Syncing and updating homebrew"
+        brew bundle --file "$script_dir/homebrew/Brewfile"
+        # xargs brew install < "$script_dir/homebrew/leaves.txt"
+        # brew update
+    else
+        echo "Homebrew not installed, please install it and sync the dependencies manually"
+    fi
+fi

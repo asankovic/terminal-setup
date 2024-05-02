@@ -1,14 +1,17 @@
 ### Link dotfiles
+
 ```bash
 ./installer
 ```
 
 ### Unlink dotfiles
+
 ```bash
 ./installer rm
 ```
 
 ### Export homebrew
+
 ```bash
 # Using leaves
 brew leaves > homebrew/leaves.txt
@@ -17,8 +20,8 @@ brew leaves > homebrew/leaves.txt
 brew bundle dump
 ```
 
+### Import homebrew manually
 
-### Import homebrew
 ```bash
 # Using leaves
 xargs brew install < homebrew/leaves.txt

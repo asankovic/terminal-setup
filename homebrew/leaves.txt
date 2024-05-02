@@ -5,7 +5,9 @@ eza
 fd
 fzf
 gawk
+git-delta
 gnu-sed
+jesseduffield/lazygit/lazygit
 jq
 libzip
 neovim
