@@ -6,6 +6,7 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "U", "<C-r>", { desc = "Undo the latest undo" })
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Turn off highlighted search" })
+keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 keymap.set({ "n", "o", "x" }, "<s-h>", "^", { desc = "Jump to beginning of line" })
 keymap.set({ "n", "o", "x" }, "<s-l>", "g_", { desc = "Jump to end of line" })
@@ -38,7 +39,7 @@ keymap.set("n", "N", "Nzzzv", { desc = "Keep the selection in the middle of the 
 keymap.set("n", "Q", "<nop>", { desc = "Nope." })
 keymap.set("n", "QQ", "<cmd>q!<CR>", { desc = "Force quit." })
 keymap.set("n", "WW", "<cmd>w!<CR>", { desc = "Force save." })
-keymap.set("n", "WQ", "<cmd>wqa<CR>", { desc = "Save all and exit nvim." })
+keymap.set("n", "WQ", "<cmd>wqa!<CR>", { desc = "Save all and exit nvim." })
 
 keymap.set("n", "<C-w><", ":vertical resize -10<CR>", { desc = "Reduce size of split vertically." })
 keymap.set("n", "<C-w>>", ":vertical resize +10<CR>", { desc = "Expand size of split vertically." })
@@ -50,7 +51,11 @@ keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end, { desc = "Source current file" })
 
+keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Close Buffer" })
+
+keymap.set("n", "tk", ":blast<CR>", { desc = "Move to last buffer in buffer list" })
+keymap.set("n", "tj", ":bfirst<CR>", { desc = "Move to first buffer in buffer list" })
+keymap.set("n", "th", ":bprev<CR>", { desc = "Move to previous buffer in buffer list" })
+keymap.set("n", "tl", ":bnext<CR>", { desc = "Move to next buffer in buffer list" })
 keymap.set("n", "<leader>w", "<cmd>bp|bd #<CR>", { desc = "Close Buffer; Retain Split" })
 keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close Buffer" })
-
-keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Close Buffer" })
