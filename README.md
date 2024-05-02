@@ -1,13 +1,13 @@
 ### Configure setup
 
 ```bash
-./installer
+./setup
 ```
 
 ### Remove setup
 
 ```bash
-./installer rm
+./setup rm
 ```
 
 ### Export homebrew manually
