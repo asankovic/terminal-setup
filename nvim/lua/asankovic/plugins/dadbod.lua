@@ -22,5 +22,7 @@ return {
 				vim.schedule(db_completion)
 			end,
 		})
+
+		vim.keymap.set("n", "<leader>db", "<cmd>DBUIToggle<CR>", { desc = "Toggle DB UI view." })
 	end,
 }

@@ -51,11 +51,35 @@ keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end, { desc = "Source current file" })
 
-keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Close Buffer" })
+keymap.set("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Turn on twilight mode" })
 
-keymap.set("n", "tk", ":blast<CR>", { desc = "Move to last buffer in buffer list" })
-keymap.set("n", "tj", ":bfirst<CR>", { desc = "Move to first buffer in buffer list" })
-keymap.set("n", "th", ":bprev<CR>", { desc = "Move to previous buffer in buffer list" })
-keymap.set("n", "tl", ":bnext<CR>", { desc = "Move to next buffer in buffer list" })
+keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Create new tab" })
+keymap.set("n", "gk", ":blast<CR>", { desc = "Move to last buffer in buffer list" })
+keymap.set("n", "gj", ":bfirst<CR>", { desc = "Move to first buffer in buffer list" })
+keymap.set("n", "gh", ":bprev<CR>", { desc = "Move to previous buffer in buffer list" })
+keymap.set("n", "gl", ":bnext<CR>", { desc = "Move to next buffer in buffer list" })
 keymap.set("n", "<leader>w", "<cmd>bp|bd #<CR>", { desc = "Close Buffer; Retain Split" })
 keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close Buffer" })
+
+function CopyReference()
+	local current_buffer = vim.api.nvim_get_current_buf()
+	local file_name = vim.api.nvim_buf_get_name(current_buffer)
+	local project_root = vim.fn.getcwd()
+	local relative_file_name = vim.fn.fnamemodify(file_name, ":~:.")
+	local line_number = vim.fn.line(".")
+	if project_root ~= "" then
+		local path_with_line = relative_file_name .. ":" .. line_number
+		print("Relative path copied to system and yank registers: " .. path_with_line)
+		vim.fn.setreg("+", path_with_line)
+		vim.fn.setreg('"', path_with_line)
+	else
+		print("File not within a project.")
+	end
+end
+
+keymap.set(
+	"n",
+	"<leader>cr",
+	":lua CopyReference()<CR>",
+	{ desc = "Copy path and line of the current file, relative to the cwd" }
+)
