@@ -48,9 +48,9 @@ return {
 				path_display = { "smart" },
 				layout_strategy = "horizontal",
 				layout_config = {
-					preview_width = 0.65,
 					horizontal = {
 						size = {
+							preview_width = 0.65,
 							width = "95%",
 							height = "95%",
 						},
