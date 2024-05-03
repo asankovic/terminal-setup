@@ -60,7 +60,7 @@ return {
 					i = {
 						["<C-j>"] = actions.cycle_history_next,
 						["<C-k>"] = actions.cycle_history_prev,
-						["<C-c>"] = actions.delete_buffer,
+						["<C-x>"] = actions.delete_buffer,
 						["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
 						["<C-t>"] = trouble_telescope.smart_open_with_trouble,
 						["<esc>"] = actions.close,

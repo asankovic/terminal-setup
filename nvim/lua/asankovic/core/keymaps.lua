@@ -24,6 +24,7 @@ keymap.set("x", "<leader>ud", "d~h", { desc = "Remove selection and toggle case.
 
 keymap.set("v", "//", 'y/<C-R>"<CR>', { desc = "Search for highlighted text" })
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system register" })
+keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system register" })
 --keymap.set("n", "<silent> \"\"", ":registers \"0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>", {desc = "Toggle case under cursor and start typing."})
 
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected line up." })
