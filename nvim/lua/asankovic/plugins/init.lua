@@ -98,4 +98,5 @@ return {
 	},
 	{ "chentoast/marks.nvim", opts = {} },
 	{ "folke/twilight.nvim", opts = {} },
+	{ "m4xshen/smartcolumn.nvim", opts = {} },
 }
