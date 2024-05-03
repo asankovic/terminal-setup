@@ -98,5 +98,25 @@ return {
 	},
 	{ "chentoast/marks.nvim", opts = {} },
 	{ "folke/twilight.nvim", opts = {} },
-	{ "m4xshen/smartcolumn.nvim", opts = {} },
+	{
+		"m4xshen/smartcolumn.nvim",
+		opts = {
+			disabled_filetypes = {
+				"NvimTree",
+				"lazy",
+				"mason",
+				"help",
+				"checkhealth",
+				"lspinfo",
+				"noice",
+				"Trouble",
+				"fish",
+				"zsh",
+				"alpha",
+				"help",
+				"text",
+				"markdown",
+			},
+		},
+	},
 }
