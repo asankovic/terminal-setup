@@ -101,6 +101,7 @@ return {
 	{
 		"m4xshen/smartcolumn.nvim",
 		opts = {
+			colorcolumn = "121",
 			disabled_filetypes = {
 				"NvimTree",
 				"lazy",
