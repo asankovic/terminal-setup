@@ -10,6 +10,11 @@ return {
 					notify = true,
 					noice = true,
 				},
+				color_overrides = {
+					mocha = {
+						base = "#11111B",
+					},
+				},
 			})
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
