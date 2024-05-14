@@ -18,5 +18,7 @@ return {
 		keymap.set("i", "<c-x>", function()
 			return vim.fn["codeium#Clear"]()
 		end, { expr = true, silent = true, desc = "Codeium clear completion prompt" })
+
+		vim.g.codeium_no_map_tab = true
 	end,
 }
