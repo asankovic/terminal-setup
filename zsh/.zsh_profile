@@ -14,7 +14,7 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 alias cat=bat
 alias cd="z"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias lt="eza --tree --level=3 --long --icons --git --no-filesize --no-time --no-user --no-permissions -a"
+alias lt="eza --tree --level=3 --long --icons --git --no-filesize --no-time --no-user --no-permissions -a --git-ignore"
 alias la="eza -la --icons --git"
 alias ld="eza --tree --only-dirs --icons --level=2 --git -a"
 
