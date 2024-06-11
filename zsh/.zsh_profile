@@ -25,6 +25,8 @@ alias gap="git add -p"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
 alias gpu="git push"
+alias gpl="git pull"
+alias gf="git fetch"
 alias gs="git status"
 alias gd="git diff"
 alias gco="git checkout"
@@ -33,6 +35,7 @@ alias gba="git branch -a"
 alias gr='git remote'
 alias grs='git restore --staged'
 alias gsh='git stash'
+alias gsw='git switch'
 alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(black)(%ch) %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 # Directories
