@@ -47,6 +47,10 @@ alias ......="cd ../../../../.."
 
 alias cl='clear'
 
+# Gradle (Spring Boot)
+alias gwb="./gradlew build"
+alias gwt="./gradlew test"
+
 # Autosuggestion
 bindkey '^e' autosuggest-execute
 bindkey '^a' autosuggest-accept
