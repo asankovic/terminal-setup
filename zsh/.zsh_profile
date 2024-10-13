@@ -47,9 +47,23 @@ alias ......="cd ../../../../.."
 
 alias cl='clear'
 
+# Docker
+alias dk="docker"
+alias dkb="docker build"
+alias dkr="docker run"
+alias dkp="docker ps"
+alias dkpa="docker ps -a"
+alias dkx="docker exec -it"
+alias dkc="docker compose"
+alias dki="docker image"
+alias dkl="docker logs"
+alias dkv="docker volume"
+
 # Gradle (Spring Boot)
 alias gwb="./gradlew build"
 alias gwt="./gradlew test"
+alias gwr="./gradlew bootRun"
+alias gwc="./gradlew compileKotlin"
 
 # Autosuggestion
 bindkey '^e' autosuggest-execute
@@ -62,8 +76,17 @@ bindkey '^j' down-line-or-search
 # Switching vim modes in terminal
 bindkey jk vi-cmd-mode
 
+type starship_zle-keymap-select >/dev/null || \
+{
+  echo "Load starship"
+  eval "$(starship init zsh)"
+  #eval "$(/usr/local/bin/starship init zsh)"
+}
 
-eval "$(starship init zsh)"
+#jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 export BAT_THEME="Catppuccin Mocha"

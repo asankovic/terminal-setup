@@ -2,9 +2,13 @@
   email = alen5.sankovic@gmail.com
   name = Alen Sanković
 [credential]
-  helper = store
-[[core]
-  pager = delta
+	helper = store
+[core]
+	pager = delta
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [delta]
