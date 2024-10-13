@@ -1,0 +1,503 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "solid",
+  // "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  // "editor.fontFamily": "Cascadia Code",
+  "editor.fontLigatures": false,
+  "editor.formatOnPaste": true,
+  "editor.glyphMargin": true,
+  "editor.largeFileOptimizations": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.selectionHighlight": false,
+  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "italic font",
+        "scope": [
+          "comment",
+          "keyword",
+          "storage",
+          "keyword.control",
+          "keyword.control.from",
+          "keyword.control.flow",
+          "keyword.operator.new",
+          "keyword.control.import",
+          "keyword.control.export",
+          "keyword.control.default",
+          "keyword.control.trycatch",
+          "keyword.control.conditional",
+          "storage.type",
+          "storage.type.class",
+          "storage.modifier.tsx",
+          "storage.type.function",
+          "storage.modifier.async",
+          "variable.language",
+          "variable.language.this",
+          "variable.language.super",
+          "meta.class",
+          "meta.var.expr",
+          "constant.language.null",
+          "support.type.primitive",
+          "entity.name.method.js",
+          "entity.other.attribute-name",
+          "punctuation.definition.comment",
+          "text.html.basic entity.other.attribute-name",
+          "tag.decorator.js entity.name.tag.js",
+          "tag.decorator.js punctuation.definition.tag.js",
+          "source.js constant.other.object.key.js string.unquoted.label.js"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.wordWrap": "off",
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconsEnabled": true,
+  "explorer.autoRevealExclude": {
+    "**/node_modules": false
+  },
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "onFocusChange",
+  "gotoNextPreviousMember.symbolKinds": [
+    "class",
+    "constructor",
+    "function",
+    "method"
+  ],
+  "hediet.vscode-drawio.resizeImages": null,
+  "indentRainbow.colors": [
+    "rgba(98, 114, 164, 0.2)",
+    "rgba(86, 182, 194, 0.2)",
+    "rgba(209, 154, 102, 0.2)",
+    "rgba(191, 97, 106, 0.2)",
+    "rgba(152, 195, 121, 0.2)"
+  ],
+  "indentRainbow.errorColor": "rgba(191, 97, 106, 0)",
+  "indentRainbow.excludedLanguages": ["plaintext"],
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.tabmixColor": "",
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "oneDarkPro.vivid": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.vimrc.enable": true,
+  "vim.argumentObjectClosingDelimiters": [")", "]", ">"],
+  "vim.argumentObjectOpeningDelimiters": ["(", "[", ">"],
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.easymotionDimBackground": true,
+  "vim.easymotionDimColor": "#848d99",
+  "vim.easymotionIncSearchForegroundColor": "#d189ff",
+  "vim.easymotionMarkerBackgroundColor": "#2f343f",
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.easymotionMarkerForegroundColorOneChar": "#ff75a0",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#c678dd",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#c678dd",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": true,
+    "<C-z>": false
+  },
+  "vim.highlightedyank.color": "rgba(202, 148, 226, 155)",
+  "vim.highlightedyank.duration": 250,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-l>"],
+      "commands": ["editor.action.triggerSuggest"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-o>"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["]", "]"],
+      "commands": ["gotoNextPreviousMember.nextMember"]
+    },
+    {
+      "before": ["[", "["],
+      "commands": ["gotoNextPreviousMember.previousMember"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "g"],
+      "commands": ["editor.action.dirtydiff.next"]
+    },
+    {
+      "before": ["[", "g"],
+      "commands": ["editor.action.dirtydiff.previous"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", ","],
+      "commands": ["workbench.action.navigateForwardInEditLocations"]
+    },
+    {
+      "before": ["g", ";"],
+      "commands": ["workbench.action.navigateBackInEditLocations"]
+    },
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["g", ":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "f", "a"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["breadcrumbs.focusAndSelect"]
+    },
+    {
+      "before": ["<leader>", "f", "u"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "r", "r"],
+      "commands": ["workbench.action.terminal.runActiveFile"]
+    },
+    {
+      "before": ["<leader>", "f", "o"],
+      "commands": [
+        "editor.action.formatDocument",
+        "editor.action.organizeImports"
+      ]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "r", "e"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["-"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "e", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // {
+    //   "before": ["<leader>", "2"],
+    //   "commands": ["workbench.view.scm"]
+    // },
+    {
+      "before": ["<leader>", "d", "w"],
+      "commands": ["workbench.view.debug"]
+    },
+    {
+      "before": ["<leader>", "x", "x"],
+      "commands": ["workbench.actions.view.toggleProblems"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["git.viewHistory"]
+    },
+    {
+      "before": ["<leader>", "h", "c"],
+      "commands": ["editor.showCallHierarchy"]
+    },
+    {
+      "before": ["<leader>", "h", "t"],
+      "commands": ["editor.showTypeHierarchy"]
+    },
+    {
+      "before": ["<C-m>"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["bookmarksExplorer.focus"]
+    },
+    {
+      "before": ["z", "c"],
+      "commands": ["editor.fold"]
+    },
+    {
+      "before": ["z", "o"],
+      "commands": ["editor.unfold"]
+    },
+    {
+      "before": ["z", "C"],
+      "commands": ["editor.foldAll"]
+    },
+    {
+      "before": ["z", "O"],
+      "commands": ["editor.unfoldAll"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "i", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    {
+      "before": ["<leader>", "i", "p"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["copy-relative-path-and-line-numbers.both"]
+    },
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["gitlens.toggleFileBlame"]
+    },
+    {
+      "before": ["<leader>", "g", "h"],
+      "commands": ["git.viewFileHistory"]
+    },
+    {
+      "before": ["m", "c"],
+      "commands": ["editor.action.insertCursorBelow"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.debug.action.focusBreakpointsView"]
+    },
+    {
+      "before": ["<leader>", "z", "m"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeSidebar"]
+    },
+    {
+      "before": ["<leader>", "h", "a"],
+      "commands": ["vscode-harpoon.addEditor"]
+    },
+    {
+      "before": ["<leader>", "h", "e"],
+      "commands": ["vscode-harpoon.editEditors"]
+    },
+    {
+      "before": ["<leader>", "f", "h"],
+      "commands": ["vscode-harpoon.editorQuickPick"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["vscode-harpoon.gotoPreviousHarpoonEditor"]
+    },
+    // todo add remove functionality https://github.com/tobias-z/vscode-harpoon/issues/35
+    // todo add with https://github.com/tobias-z/vscode-harpoon/pull/38
+    // {
+    //   "before": ["<C-k>"],
+    //   "commands": ["vscode-harpoon.gotoNextHarpoonEditor"]
+    // },
+    // {
+    //   "before": ["<C-j>"],
+    //   "commands": ["vscode-harpoon.gotoPreviousHarpoonEditor"]
+    // },
+    {
+      "before": ["<leader>", "1"],
+      "commands": ["vscode-harpoon.gotoEditor1"]
+    },
+    {
+      "before": ["<leader>", "2"],
+      "commands": ["vscode-harpoon.gotoEditor2"]
+    },
+    {
+      "before": ["<leader>", "3"],
+      "commands": ["vscode-harpoon.gotoEditor3"]
+    },
+    {
+      "before": ["<leader>", "4"],
+      "commands": ["vscode-harpoon.gotoEditor4"]
+    },
+    {
+      "before": ["<leader>", "5"],
+      "commands": ["vscode-harpoon.gotoEditor5"]
+    }
+    //documentation only, set in keybindings because this doesn't get picked up
+    // {
+    //   "before": ["<D-d>"],
+    //   "commands": ["workbench.action.debug.start"]
+    // },
+    // {
+    //   "before": ["<D-n>"],
+    //   "commands": ["workbench.action.debug.stepOver"]
+    // },
+    // {
+    //   "before": ["<D-o>"],
+    //   "commands": ["workbench.action.debug.stepOut"]
+    // },
+    // {
+    //   "before": ["<D-i>"],
+    //   "commands": ["workbench.action.debug.stepInto"]
+    // },
+    // {
+    //   "before": ["<D-r>"],
+    //   "commands": ["workbench.action.debug.continue"]
+    // },
+    // {
+    //   "before": ["<D-s>"],
+    //   "commands": ["workbench.action.debug.stop"]
+    // },
+    // {
+    //   "before": ["<D-c>"],
+    //   "commands": ["editor.debug.action.runToCursor"]
+    // },
+    // {
+    //   "before": ["<D-e>"],
+    //   "commands": ["editor.debug.action.selectionToRepl"]
+    // },
+    // {
+    //   "before": ["<D-b>"],
+    //   "commands": ["editor.debug.action.toggleBreakpoint"]
+    // },,
+    // {
+    //   "before": ["<D-t>"],
+    //   "commands": ["workbench.debug.viewlet.action.toggleBreakpointsActivatedAction"]
+    // },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "commands": [":registers \"0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>"],
+      "before": ["\"", "\""],
+      "silent": true
+    },
+    {
+      "before": ["g", "k"],
+      "after": ["g", "t"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["g", "T"]
+    }
+  ],
+  "vim.replaceWithRegister": true,
+  "vim.sneak": false,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.surround": true,
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "f", "a"],
+      "commands": ["workbench.action.findInFiles"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["<leader>", "f", "o"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["<leader>", "r", "e"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["editor.action.quickFix"]
+    }
+  ],
+  "vim.visualstar": true,
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#ca94e2",
+    "tab.unfocusedActiveBorder": "#000000",
+    "editor.background": "#11111B80"
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "catppuccin.accentColor": "pink",
+  "catppuccin.colorOverrides": {
+    "mocha": {
+      "base": "#11111B"
+    }
+  },
+  "catppuccin.customUIColors": {
+    "mocha": {
+      "statusBar.foreground": "accent"
+    }
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "a-file-icon-vscode",
+  "zenMode.hideLineNumbers": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "errorLens.enabled": true,
+  "mule.homeDirectory": "/Users/alen.sankovic/AnypointCodeBuilder",
+"mule.controlPlane": "US Cloud",
+"cSpell.userWords": [
+    "idoc"
+],
+"[dockercompose]": {
+  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+}
+}
