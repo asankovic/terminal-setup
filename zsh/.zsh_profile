@@ -10,6 +10,8 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 #export LANG=en_US.UTF-8
 
+alias ffs=sudo
+
 # CLI
 alias cat=bat
 alias cd="z"
@@ -48,16 +50,28 @@ alias ......="cd ../../../../.."
 alias cl='clear'
 
 # Docker
-alias dk="docker"
-alias dkb="docker build"
-alias dkr="docker run"
-alias dkp="docker ps"
-alias dkpa="docker ps -a"
-alias dkx="docker exec -it"
-alias dkc="docker compose"
-alias dki="docker image"
-alias dkl="docker logs"
-alias dkv="docker volume"
+mkdir -p ~/.docker/completions && docker completion zsh > ~/.docker/completions/_docker
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
+
+alias d="docker"
+alias db="docker build"
+alias dr="docker run"
+alias dp="docker ps"
+alias dpa="docker ps -a"
+alias dx="docker exec -it"
+alias dc="docker compose"
+alias di="docker image"
+alias dl="docker logs"
+alias dv="docker volume"
+
+# K8S
+source <(kubectl completion zsh)
+alias k="kubectl"
+alias kg="kubectl get"
+alias kc="kubectl create"
+alias kl="kubectl logs"
 
 # Gradle (Spring Boot)
 alias gwb="./gradlew build"
