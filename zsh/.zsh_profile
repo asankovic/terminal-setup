@@ -4,12 +4,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 export XDG_CONFIG_HOME=$HOME/.config
+export EDITOR=vim
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 #export LANG=en_US.UTF-8
-
 alias ffs=sudo
 
 # CLI
@@ -68,10 +68,8 @@ alias dv="docker volume"
 
 # K8S
 source <(kubectl completion zsh)
-alias k="kubectl"
-alias kg="kubectl get"
-alias kc="kubectl create"
-alias kl="kubectl logs"
+[ ! -f ~/.kube/aliases.sh ] && curl -fsSL "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases" > ~/.kube/aliases.sh
+source ~/.kube/aliases.sh
 
 # Gradle (Spring Boot)
 alias gwb="./gradlew build"
@@ -83,7 +81,7 @@ alias gwc="./gradlew compileKotlin"
 bindkey '^e' autosuggest-execute
 bindkey '^a' autosuggest-accept
 bindkey '^t' autosuggest-toggle
-bindkey '^l' vi-forward-word
+bindkey '^w' vi-forward-word
 bindkey '^k' up-line-or-search
 bindkey '^j' down-line-or-search
 
