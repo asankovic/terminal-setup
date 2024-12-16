@@ -37,7 +37,7 @@ set incsearch
 " ======================================================================
 
 " ========================== General remaps  ===========================
-"" Show register content
+"" Show register content (in IntelliJ using peakaboo plugin)
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
 "" Exit insert mode
@@ -91,8 +91,8 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
 " Move selected line up or down
-"vnoremap K :m '<-2<CR>gv=gv
-"vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 
 " Join line without losing the cursor position
 nnoremap J mzJ`z
@@ -130,6 +130,7 @@ if has("ide")
         set easymotion
         set commentary
         set exchange
+        set peekaboo
         " set matchit
 
         "" Var configs
@@ -144,7 +145,7 @@ if has("ide")
         "" exchange - for some reason need to redefine it
         xmap X <Plug>(Exchange)
         "nmap <leader>e :NERDTree <CR>
-        nmap - :NERDTreeToggle <CR>
+        "nmap - :NERDTreeToggle <CR>
 
 
         "" multiple-cursors
@@ -235,7 +236,7 @@ if has("ide")
         nmap <leader>wu <Action>(CloseAllEditorsButActive)
         nmap <leader>qq <Action>(HideAllWindows)
         nmap <leader>qe <Action>(HideActiveWindow)
-        nmap <leader>ee <Action>(ActivateProjectToolWindow)
+        nmap <C-t> <Action>(ActivateProjectToolWindow)
         "nmap <leader>dw <Action>(ActivateDebugToolWindow)
         "nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
         nmap <leader>we <Action>(JumpToLastWindow)
@@ -273,12 +274,17 @@ if has("ide")
         nmap K <Action>(ShowHoverInfo)
         nmap [d <Action>(GotoPreviousError)
         nmap ]d <Action>(GotoNextError)
-        nmap <leader>he <Action>(QuickList.Noob board)
-        nmap <leader>hw <Action>(QuickList.Look at all those windows)
         nmap <leader>ii <Action>(QuickImplementations)
         nmap <leader>ip <Action>(ParameterInfo)
         nmap <leader>it <Action>(ExpressionTypeInfo)
         nmap <leader>cr <Action>(CopyReference)
+
+        "" Quick lists
+        nmap <leader>lw <Action>(QuickList.Look at all those windows)
+        map <leader>lr <Action>(QuickList.Refactor magic)
+        nmap <leader>ld <Action>(QuickList.Advanced debug)
+        map <leader>li <Action>(QuickList.Code police)
+
         " Git
         nmap ]g <Action>(VcsShowNextChangeMarker)
         nmap [g <Action>(VcsShowPrevChangeMarker)

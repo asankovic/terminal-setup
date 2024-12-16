@@ -236,7 +236,7 @@
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "e", "e"],
+      "before": ["<C-t>"],
       "commands": ["workbench.view.explorer"]
     },
     // {
@@ -493,11 +493,11 @@
   },
   "errorLens.enabled": true,
   "mule.homeDirectory": "/Users/alen.sankovic/AnypointCodeBuilder",
-"mule.controlPlane": "US Cloud",
-"cSpell.userWords": [
-    "idoc"
-],
-"[dockercompose]": {
-  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-}
+  "mule.controlPlane": "US Cloud",
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
 }

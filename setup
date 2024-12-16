@@ -35,13 +35,14 @@ fi
 source "$zshrc_path"
 echo "Zshrc updated and sourced!"
 
-if [[ "$1" != "rm" ]]; then
-    if command -v brew &> /dev/null; then
-        echo "Syncing and updating homebrew"
-        brew bundle --file "$script_dir/homebrew/Brewfile"
-        # xargs brew install < "$script_dir/homebrew/leaves.txt"
-        # brew update
-    else
-        echo "Homebrew not installed, please install it and sync the dependencies manually"
-    fi
-fi
+# uncomment or do manually
+# if [[ "$1" != "rm" ]]; then
+#     if command -v brew &> /dev/null; then
+#         echo "Syncing and updating homebrew"
+#         brew bundle --file "$script_dir/homebrew/Brewfile"
+#         # xargs brew install < "$script_dir/homebrew/leaves.txt"
+#         # brew update
+#     else
+#         echo "Homebrew not installed, please install it and sync the dependencies manually"
+#     fi
+# fi

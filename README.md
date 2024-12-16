@@ -27,6 +27,7 @@ brew bundle dump
 xargs brew install < homebrew/leaves.txt
 
 # Using brew bundle (make sure to be in the same folder as Brewfile, or pass --file argument"
+# BREWFILE NOT UP TO DATE, USE LEAVES
 brew bundle check
 brew bundle
 ```
