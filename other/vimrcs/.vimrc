@@ -1,5 +1,10 @@
 " ============================ Leader key  =============================
-noremap <SPACE> <Nop>
+if !exists('g:vscode')
+  noremap <SPACE> <Nop>
+  nnoremap <Space> <Nop>
+  vnoremap <Space> <Nop>
+endif
+
 let mapleader=" "
 " ======================================================================
 
@@ -47,10 +52,6 @@ nnoremap U <C-r>
 
 " Turn off highlighted search
 nnoremap <Esc> :nohlsearch<CR>
-
-" Disable space key in normal and visual modes
-nnoremap <Space> <Nop>
-vnoremap <Space> <Nop>
 
 "" Moving to start and end of line
 nnoremap L g_
