@@ -82,8 +82,8 @@ bindkey '^e' autosuggest-execute
 bindkey '^a' autosuggest-accept
 bindkey '^t' autosuggest-toggle
 bindkey '^w' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
+bindkey '^p' up-line-or-search
+bindkey '^n' down-line-or-search
 
 # Switching vim modes in terminal
 bindkey jk vi-cmd-mode
