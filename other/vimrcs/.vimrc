@@ -52,6 +52,8 @@ nnoremap U <C-r>
 
 " Turn off highlighted search
 nnoremap <Esc> :nohlsearch<CR>
+nnoremap <leader>hl :set hlsearch!<CR>
+nnoremap <leader>n :set relativenumber!<CR>
 
 "" Moving to start and end of line
 nnoremap L g_
