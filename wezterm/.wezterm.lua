@@ -13,7 +13,7 @@ config.color_schemes = {
 }
 config.color_scheme = 'DarkCatppuccinMocha'
 config.font_size = 11.0
-config.font = wezterm.font 'Fira Code'
+config.font = wezterm.font 'FiraCode Nerd Font'
 
 -- Window
 config.enable_tab_bar = false
