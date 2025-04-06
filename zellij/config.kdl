@@ -152,6 +152,51 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal"
         }
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
+                "LOAD_ZELLIJ_BINDINGS"              "false"
+                "Lock"                              "Ctrl + L"
+                "Unlock"                            "Ctrl + L"
+                "New Pane"                          "Ctrl + P + N"
+                "New Pane Down"                     "Ctrl + P + D"
+                "Change Focus of Pane"              "Ctrl + P + Arrow Key / H J K L"
+                "Close Pane"                        "Ctrl + P + X"
+                "Rename Pane"                       "Ctrl + P + R"
+                "Toggle Fullscreen"                 "Ctrl + P + F"
+                "Toggle Floating Pane"              "Ctrl + P + W"
+                "Toggle Embed Pane"                 "Ctrl + P + E"
+                "New Tab"                           "Ctrl + T + N"
+                "Close Tab"                         "Ctrl + T + X"
+                "Change Focus of Tab"               "Ctrl + T + Arrow Key / H J K L J"
+                "Rename Tab"                        "Ctrl + T + R"
+                "Sync Tab"                          "Ctrl + T + S"
+                "Break Pane to New Tab"             "Ctrl + T + B"
+                "Break Pane Left"                   "Ctrl + T + ["
+                "Break Pane Right"                  "Ctrl + T + ]"
+                "Toggle Tab"                        "Ctrl + T + Tab"
+                "Go to Tab"                         "Ctrl + T + <Number>"
+                "Resize Pane"                       "Ctrl + N + Arrow Key / H J K L / + -"
+                "Move Pane"                         "Ctrl + H + Arrow Key / H J K L"
+                "Search"                            "Ctrl + S + S"
+                "Go Into Edit Mode"                 "Ctrl + S + E"
+                "Detach Session"                    "Ctrl + X + D"
+                "Open Session Manager"              "Ctrl + X + W"
+                "Configure"                         "Ctrl + X + C"
+                "Plugin Manager"                    "Ctrl + X + P"
+                "Quit Zellij"                       "Ctrl + Q"
+                "Search: Case Sensitivity"          "C"
+                "Search: Whole Word"                "O"
+                "Search: Wrap"                      "W"
+                "Change Pane"                       "Alt + Arrow Key / H J K L"
+                "New Pane"                          "Alt + N"
+                "Resize Pane"                       "Alt + Arrow Key / H J K L / + -"
+                "Vertical / Horizontal Layout Swap" "Alt + ] / ["
+                "Toggle Floating Pane"              "Alt + W"
+                "Move Tab Left / Right"             "Alt + I / O"
+                "Find Files or Folders"             "Alt + F"
+                floating true
+        }
+    }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }
