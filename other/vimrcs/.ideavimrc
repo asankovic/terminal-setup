@@ -32,7 +32,7 @@ set showmode
 
 set ignorecase
 set smartcase
-set hlsearch
+set nohlsearch
 set incsearch
 " ======================================================================
 
@@ -47,8 +47,9 @@ inoremap jk <ESC>
 nnoremap Q <Nop>
 nnoremap U <C-r>
 
-" Turn off highlighted search
 nnoremap <Esc> :nohlsearch<CR>
+nnoremap <leader>hl :set hlsearch!<CR>
+nnoremap <leader>n :set relativenumber!<CR>
 
 " Disable space key in normal and visual modes
 nnoremap <Space> <Nop>
@@ -131,6 +132,7 @@ if has("ide")
         set commentary
         set exchange
         set peekaboo
+        set functiontextobj
         " set matchit
 
         "" Var configs
@@ -145,7 +147,7 @@ if has("ide")
         "" exchange - for some reason need to redefine it
         xmap X <Plug>(Exchange)
         "nmap <leader>e :NERDTree <CR>
-        "nmap - :NERDTreeToggle <CR>
+        nmap - :NERDTreeToggle <CR>
 
 
         "" multiple-cursors
@@ -190,12 +192,14 @@ if has("ide")
         "nmap <leader>uh <Action>(HighlightUsagesInFile)
 
         "" Tests and running
-        nmap <leader>rr <Action>(RunClass)
-        "nmap <leader>gt <Action>(GotoTest)
-        nmap <leader>rg <Action>(hybris.groovy.execute.commit.mode.off)
+        nmap <leader>rr <Action>(Run)
+        nmap <leader>rs <Action>(Stop)
+        nmap <leader>rd <Action>(Debug)
+        nmap <leader>rc <Action>(RunClass)
+        nmap <leader>ft <Action>(GotoTest)
 
         "" Generating
-        "nmap <leader>ns <Action>(NewScratchFile)
+        nmap <leader>ns <Action>(NewScratchFile)
         nmap <leader>ge <Action>(Generate)
         nmap <leader>im <Action>(ImplementMethods)
         nmap <leader>or <Action>(OverrideMethods)
@@ -224,22 +228,21 @@ if has("ide")
         "map <leader>ef <Action>(IntroduceProperty)
 
         "" Code completion
-        imap ;; <Action>(CodeCompletion)
+        imap <C-j> <Action>(CodeCompletion)
         nmap <C-l> <Action>(EditorCompleteStatement)
         imap <C-l> <Action>(EditorCompleteStatement)
 
         "" Windows and editor tabs
         nnoremap gk gt
         nnoremap gj gT
-        "todo
-        nmap <leader>ww <Action>(CloseEditor)
-        nmap <leader>wu <Action>(CloseAllEditorsButActive)
-        nmap <leader>qq <Action>(HideAllWindows)
-        nmap <leader>qe <Action>(HideActiveWindow)
+
+        nmap <C-q> <Action>(CloseEditor)
+        nmap _ <Action>(CloseAllEditorsButActive)
+        nmap + <Action>(HideAllWindows)
+        nmap \ <Action>(HideActiveWindow)
+        nmap ^ <Action>(JumpToLastWindow)
         nmap <C-t> <Action>(ActivateProjectToolWindow)
-        "nmap <leader>dw <Action>(ActivateDebugToolWindow)
         "nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
-        nmap <leader>we <Action>(JumpToLastWindow)
 
         "" Hierarchies
         nmap <leader>hc <Action>(CallHierarchy)
@@ -309,6 +312,9 @@ if has("ide")
         nmap <leader>hh <Action>(AddToHarpoon)
 
         nmap <D-l> <Action>(NextProjectWindow)
-        "nmap <D-h> <Action>()
+
+        "" AI
+        map <leader>ac <Action>(com.codeium.intellij.editor_menu.ExplainSelection)
+        map <leader>ai <Action>(com.codeium.intellij.command.CommandAction)
         " ======================================================================
 endif
