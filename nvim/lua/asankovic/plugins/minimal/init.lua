@@ -1,40 +1,93 @@
 return {
-	{ "tpope/vim-sleuth" },
-	{ "chentoast/marks.nvim", opts = {} },
-	{
-		"numToStr/Comment.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		lazy = false,
-		opts = {},
-	},
-	{
-        "kylechui/nvim-surround",
-        event = { "BufReadPre", "BufNewFile" },
-        version = "*",
-        config = true,
-	},
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim"},
-        opts = {
-            presets = {
-                bottom_search = true,
-                long_message_to_split = true,
-            },
-        },
+  { "nvim-lua/plenary.nvim" },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
-    {
-        "folke/snacks.nvim",
-        priority = 1000,
-        lazy = false,
-        ---@type snacks.Config
-        opts = {
-            indent = { enabled = true },
-            input = { enabled = true },
-            quickfile = { enabled = true },
-            scroll = { enabled = true },
-            notifier = { enabled = true },
+    opts = {
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
         },
-    }
+      },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = false,
+        lsp_doc_border = true,
+      },
+    },
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "\\",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    cmd = "Trouble",
+    keys = {
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+      { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+    },
+  },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = { library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } } } },
+  },
+  {
+    "Exafunction/windsurf.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+        enable_cmp_source = false,
+        virtual_text = {
+          enabled = true,
+        },
+      })
+    end,
+  },
 }
