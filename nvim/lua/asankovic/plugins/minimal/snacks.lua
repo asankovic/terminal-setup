@@ -76,6 +76,7 @@ return {
       { "<leader>nc", function() Snacks.notifier.hide() end, desc = "[N]otifications [C]lear" },
       { "<leader>rn", function() Snacks.words.jump(vim.v.count1) end, desc = "[R]eference [N]ext", mode = { "n", "t" } },
       { "<leader>rp", function() Snacks.words.jump(-vim.v.count1) end, desc = "[R]eference [P]revious", mode = { "n", "t" } },
+      { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     },
     init = function()
       vim.api.nvim_create_autocmd("User", {
