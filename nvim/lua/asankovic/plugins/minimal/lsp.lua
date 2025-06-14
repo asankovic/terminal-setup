@@ -8,7 +8,7 @@ local function configureLsp()
 			local opts = { buffer = ev.buf, silent = true }
 
 			opts.desc = "See available code actions"
-			keymap.set({ "n", "v" }, "<leader>ga", vim.lsp.buf.code_action, opts)
+			keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, opts)
 
 			opts.desc = "Smart rename"
 			keymap.set("n", "<leader>re", vim.lsp.buf.rename, opts)
