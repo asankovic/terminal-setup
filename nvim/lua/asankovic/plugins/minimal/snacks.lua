@@ -94,6 +94,7 @@ return {
           Snacks.toggle.inlay_hints():map("<leader>ti")
           Snacks.toggle.indent():map("<leader>tg")
           Snacks.toggle.dim():map("<leader>tD")
+          Snacks.toggle.words():map("<leader>tr")
         end,
       })
     end,
