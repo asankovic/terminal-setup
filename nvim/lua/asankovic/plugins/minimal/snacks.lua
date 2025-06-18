@@ -10,7 +10,7 @@ return {
       notifier = { enabled = true, timeout = 3000, },
       quickfile = { enabled = true },
       scroll = { enabled = true },
-      picker = { enabled = true },
+      picker = { enabled = true, matcher = { frecency = true } },
       words = { enabled = true },
       dashboard = {
         enabled = true,

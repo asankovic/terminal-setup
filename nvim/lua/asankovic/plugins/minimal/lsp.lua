@@ -8,10 +8,10 @@ local function configureLsp()
       local opts = { buffer = ev.buf, silent = true }
 
       opts.desc = "See available code actions"
-      keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, opts)
+      keymap.set({ "n", "x" }, "ga", vim.lsp.buf.code_action, opts)
 
       opts.desc = "Smart rename"
-      keymap.set("n", "<leader>re", vim.lsp.buf.rename, opts)
+      keymap.set({ "n", "x"}, "<leader>re", vim.lsp.buf.rename, opts)
 
       opts.desc = "Show signature help"
       keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, opts)
