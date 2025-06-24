@@ -15,6 +15,7 @@ return {
         "css",
         "dockerfile",
         "gitignore",
+        "graphql",
         "helm",
         "html",
         "javascript",
