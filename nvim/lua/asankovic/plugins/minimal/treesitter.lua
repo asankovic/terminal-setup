@@ -20,6 +20,7 @@ return {
         "javascript",
         "json",
         "lua",
+        "proto",
         "query",
         "scss",
         "sql",

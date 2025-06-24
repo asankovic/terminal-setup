@@ -10,6 +10,7 @@ return {
   opts = {
     ensure_installed = {
       "angularls",
+      "buf_ls",
       "gh_actions_ls",
       "ansiblels",
       "bashls",
